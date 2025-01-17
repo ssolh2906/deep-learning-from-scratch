@@ -126,10 +126,10 @@ class SimpleConvNet:
             grads['W1']、grads['W2']、... 각 층의 가중치
             grads['b1']、grads['b2']、... 각 층의 편향
         """
-        # forward
+        # 순전파
         self.loss(x, t)
 
-        # backward
+        # 역전파
         dout = 1
         dout = self.last_layer.backward(dout)
 
