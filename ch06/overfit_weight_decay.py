@@ -10,14 +10,11 @@ from common.optimizer import SGD
 
 (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True)
 
-# 오버피팅을 재현하기 위해 학습 데이터 수를 줄임
+# 과대적합을 재현하기 위해 학습 데이터 수를 줄임
 x_train = x_train[:300]
 t_train = t_train[:300]
 
-# weight decay（가중치 감쇠） 설정 =======================
-#weight_decay_lambda = 0 # weight decay를 사용하지 않을 경우
-weight_decay_lambda = 0.1
-# ====================================================
+weight_decay_lambda = 0.1 # 가중치 감쇠 설정
 
 network = MultiLayerNet(input_size=784, hidden_size_list=[100, 100, 100, 100, 100, 100], output_size=10,
                         weight_decay_lambda=weight_decay_lambda)
