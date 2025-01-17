@@ -1,6 +1,6 @@
 # coding: utf-8
-import sys, os
-sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 import pickle
 import numpy as np
 from collections import OrderedDict
@@ -126,7 +126,7 @@ class DeepConvNet:
             pickle.dump(params, f)
 
     def load_params(self, file_name="params.pkl"):
-        with open(file_name, 'rb') as f:
+        with open(os.path.dirname(__file__) + '/' + file_name, 'rb') as f:
             params = pickle.load(f)
         for key, val in params.items():
             self.params[key] = val
