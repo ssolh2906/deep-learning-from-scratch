@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
 import numpy as np
 import pickle
 from dataset.mnist import load_mnist
@@ -13,7 +13,7 @@ def get_data():
 
 
 def init_network():
-    with open("sample_weight.pkl", 'rb') as f:
+    with open(os.path.dirname(__file__) + "/sample_weight.pkl", 'rb') as f:
         network = pickle.load(f)
     return network
 
