@@ -28,6 +28,8 @@ optimizers["Momentum"] = Momentum(lr=0.1)
 optimizers["AdaGrad"] = AdaGrad(lr=1.5)
 optimizers["Adam"] = Adam(lr=0.3)
 
+plt.figure(figsize=(12, 8))
+
 idx = 1
 
 for key in optimizers:
@@ -62,10 +64,9 @@ for key in optimizers:
     plt.ylim(-10, 10)
     plt.xlim(-10, 10)
     plt.plot(0, 0, '+')
-    #colorbar()
-    #spring()
     plt.title(key)
     plt.xlabel("x")
     plt.ylabel("y")
     
+plt.subplots_adjust(wspace=0.3, hspace=0.4)    
 plt.show()
