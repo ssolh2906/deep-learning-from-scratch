@@ -32,7 +32,7 @@ network.load_params("params.pkl")
 
 filter_show(network.params['W1'], 16)
 
-img = imread('../dataset/cactus_gray.png')
+img = imread(os.path.dirname(__file__) + '/../dataset/cactus_gray.png')
 img = img.reshape(1, 1, *img.shape)
 
 fig = plt.figure()
