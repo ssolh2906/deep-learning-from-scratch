@@ -59,6 +59,8 @@ col_num = 5
 row_num = int(np.ceil(graph_draw_num / col_num))
 i = 0
 
+plt.figure(figsize=(10, 8))
+
 for key, val_acc_list in sorted(results_val.items(), key=lambda x:x[1][-1], reverse=True):
     print("Best-" + str(i+1) + "(val acc:" + str(val_acc_list[-1]) + ") | " + key)
 
@@ -75,4 +77,5 @@ for key, val_acc_list in sorted(results_val.items(), key=lambda x:x[1][-1], reve
     if i >= graph_draw_num:
         break
 
+plt.subplots_adjust(wspace=0.2, hspace=0.3)    
 plt.show()
