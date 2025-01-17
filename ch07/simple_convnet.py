@@ -155,7 +155,7 @@ class SimpleConvNet:
             pickle.dump(params, f)
 
     def load_params(self, file_name="params.pkl"):
-        with open(file_name, 'rb') as f:
+        with open(os.path.dirname(__file__) + '/' + file_name, 'rb') as f:
             params = pickle.load(f)
         for key, val in params.items():
             self.params[key] = val
