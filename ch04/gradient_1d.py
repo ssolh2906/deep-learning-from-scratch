@@ -20,10 +20,24 @@ def tangent_line(f, x):
      
 x = np.arange(0.0, 20.0, 0.1)
 y = function_1(x)
+
 plt.xlabel("x")
 plt.ylabel("f(x)")
 
+# 접선 없이 그리기(x = 5)
+plt.plot(x, y)
+plt.show()
+
+# 접선 그리기(x = 5)
 tf = tangent_line(function_1, 5)
+y2 = tf(x)
+
+plt.plot(x, y)
+plt.plot(x, y2)
+plt.show()
+
+# 접선 그리기(x = 10)
+tf = tangent_line(function_1, 10)
 y2 = tf(x)
 
 plt.plot(x, y)
