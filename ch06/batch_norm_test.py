@@ -61,28 +61,15 @@ def __train(weight_init_std):
 weight_scale_list = np.logspace(0, -4, num=16)
 x = np.arange(max_epochs)
 
-for i, w in enumerate(weight_scale_list):
-    print( "============== " + str(i+1) + "/16" + " ==============")
-    train_acc_list, bn_train_acc_list = __train(w)
+train_acc_list, bn_train_acc_list = __train(weight_scale_list[4])
     
-    plt.subplot(4,4,i+1)
-    plt.title("W:" + str(w))
-    if i == 15:
-        plt.plot(x, bn_train_acc_list, label='Batch Normalization', markevery=2)
-        plt.plot(x, train_acc_list, linestyle = "--", label='Normal(without BatchNorm)', markevery=2)
-    else:
-        plt.plot(x, bn_train_acc_list, markevery=2)
-        plt.plot(x, train_acc_list, linestyle="--", markevery=2)
-
-    plt.ylim(0, 1.0)
-    if i % 4:
-        plt.yticks([])
-    else:
-        plt.ylabel("accuracy")
-    if i < 12:
-        plt.xticks([])
-    else:
-        plt.xlabel("epochs")
-    plt.legend(loc='lower right')
+plt.title("Training Accuracy")
+plt.plot(x, bn_train_acc_list, label='Batch Normalization', markevery=2)
+plt.plot(x, train_acc_list, linestyle = "--", label='Normal(without BatchNorm)', markevery=2)
+plt.ylim(0, 1.0)
+plt.xlim(0, max_epochs)
+plt.ylabel("accuracy")
+plt.xlabel("epochs")
+plt.legend(loc='lower right')
     
 plt.show()
