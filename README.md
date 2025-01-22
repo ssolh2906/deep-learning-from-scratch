@@ -2,7 +2,7 @@
 
 <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791169213387.jpg" width="150" align=right>
 
-<a href="https://product.kyobobook.co.kr/book/preview/S000215599933"  target="_blank">[미리보기]</a> | <a href="https://docs.google.com/document/d/1kOK8Tu4E0ENtl0N5ugSVH8B7kfIJ53Uiarx52T5RIqE/"  target="_blank">[알려진 오류(정오표)]</a> | <a href="https://github.com/WegraLee/deep-learning-from-scratch/raw/refs/heads/master/equations_and_figures.zip"  target="_blank">[본문 그림과 수식 이미지 모음]</a>
+<a href="https://product.kyobobook.co.kr/book/preview/S000215599933" target="_blank">[미리보기]</a> | <a href="https://docs.google.com/document/d/1kOK8Tu4E0ENtl0N5ugSVH8B7kfIJ53Uiarx52T5RIqE/" target="_blank">[알려진 오류(정오표)]</a> | <a href="https://github.com/WegraLee/deep-learning-from-scratch/raw/refs/heads/master/equations_and_figures.zip" target="_blank">[본문 그림과 수식 이미지 모음]</a>
 
 :red_circle: **[공지]** 2025년 1월에 '리마스터판'이 출간되었습니다(<a href="https://www.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS2416204088&cate_cd=" target="_blank">제작 뒷이야기</a>). 리마스터판의 예제 코드는 초판의 예제 코드와 호환되므로, 초판 독자 분들도 이 저장소의 코드를 그대로 활용하시면 됩니다.
 
