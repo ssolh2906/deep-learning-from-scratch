@@ -1,8 +1,10 @@
-# 『밑바닥부터 시작하는 딥러닝』
+# 『밑바닥부터 시작하는 딥러닝 1(리마스터판)』
 
-<a href="http://www.yes24.com/Product/Goods/34970929"><img src="https://github.com/WegraLee/deep-learning-from-scratch/blob/master/cover.jpeg" width="150" align=right></a>
+<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791169213387.jpg" width="150" align=right>
 
-[미리보기](https://preview2.hanbit.co.kr/books/riaq/#p=1) | [알려진 오류(정오표)](http://www.hanbit.co.kr/store/books/look.php?p_code=B8475831198) | [본문 그림과 수식 이미지 모음](https://github.com/WegraLee/deep-learning-from-scratch/raw/refs/heads/master/equations_and_figures.zip)
+<a href="https://product.kyobobook.co.kr/book/preview/S000215599933"  target="_blank">[미리보기]</a> | <a href="https://docs.google.com/document/d/1kOK8Tu4E0ENtl0N5ugSVH8B7kfIJ53Uiarx52T5RIqE/"  target="_blank">[알려진 오류(정오표)]</a> | <a href="https://github.com/WegraLee/deep-learning-from-scratch/raw/refs/heads/master/equations_and_figures.zip"  target="_blank">[본문 그림과 수식 이미지 모음]</a>
+
+:red_circle: **[공지]** 2025년 1월에 '리마스터판'이 출간되었습니다(<a href="https://www.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS2416204088&cate_cd=" target="_blank">제작 뒷이야기</a>). 리마스터판의 예제 코드는 초판의 예제 코드와 호환되므로, 초판 독자 분들도 이 저장소의 코드를 그대로 활용하시면 됩니다.
 
 :red_circle: **[공지]** 종종 실습용 손글씨 데이터셋 다운로드 사이트( http://yann.lecun.com/exdb/mnist/ )가 연결되지 않습니다.
 그래서 예제 수행에 필요한 데이터셋 파일을 /dataset/ 디렉터리에 올려뒀습니다.
@@ -47,9 +49,20 @@
 * Matplotlib
 
 
-## 실행 방법
-각 장의 디렉터리로 이동한 후 파이썬 명령을 실행하세요(**다른 디렉터리에서는 제대로 실행되지 않을 수 있습니다!**).
+## 실행 방법 (리마스터판)
+어디서든 실행할 수 있습니다.
+```
+$ python deep-learning-from-scratch-master/ch01/img_show.py
 
+$ cd deep-learning-from-scratch-master
+$ python ch01/img_show.py
+
+$ cd ch01
+$ python img_show.py
+```
+
+## 실행 방법 (초판)
+각 장의 디렉터리로 이동 후 실행해야 합니다(**다른 디렉터리에서는 제대로 실행되지 않을 수 있습니다!**).
 ```
 $ cd ch01
 $ python man.py
@@ -63,15 +76,15 @@ $ python train_nueralnet.py
 ## 동영상 강의
 수원대학교 한경훈 교수님께서 『밑바닥부터 시작하는 딥러닝』 1, 2편을 교재로 진행하신 강의를 공개해주셨습니다. 책만으로 부족하셨던 분들께 많은 도움이 되길 바랍니다.
 
-딥러닝 I - [강의 홈페이지](https://sites.google.com/site/kyunghoonhan/deep-learning-i)
+딥러닝 I - <a href="https://sites.google.com/site/kyunghoonhan/deep-learning-i" target="_blank">[강의 홈페이지]</a>
 
 [![시리즈 1](https://img.youtube.com/vi/8Gpa_pdHrPE/0.jpg)](https://www.youtube.com/watch?v=8Gpa_pdHrPE&list=PLBiQZMT3oSxW1RS1hn2jWBgswh0nlcgQZ)
 
-딥러닝 II - [강의 홈페이지](https://sites.google.com/site/kyunghoonhan/deep-learning-ii)
+딥러닝 II - <a href="https://sites.google.com/site/kyunghoonhan/deep-learning-ii" target="_blank">[강의 홈페이지]</a>
 
 [![시리즈 1](https://img.youtube.com/vi/5fwD1p9ymx8/0.jpg)](https://www.youtube.com/watch?v=5fwD1p9ymx8&list=PLBiQZMT3oSxXNGcmAwI7vzh2LzwcwJpxU)
 
-딥러닝 III - [강의 홈페이지](https://sites.google.com/site/kyunghoonhan/deep-learning-iii)
+딥러닝 III - <a href="https://sites.google.com/site/kyunghoonhan/deep-learning-iii" target="_blank">[강의 홈페이지]</a>
 
 [![시리즈 1](https://img.youtube.com/vi/kIobK76on3s/0.jpg)](https://www.youtube.com/watch?v=kIobK76on3s&list=PLBiQZMT3oSxV3RxoFgNcUNV4R7AlvUMDx)
 
