@@ -1,6 +1,6 @@
 # 『밑바닥부터 시작하는 딥러닝 1(리마스터판)』
 
-<img src="https://www.hanbit.co.kr/data/cms/CMS2416204088_thumb.png" width="300" align=right>
+<a href="https://www.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS2416204088&cate_cd=" target="_blank"><img src="https://www.hanbit.co.kr/data/cms/CMS2416204088_thumb.png" width="300" align=right></a>
 
 <a href="https://product.kyobobook.co.kr/book/preview/S000215599933" target="_blank">[미리보기]</a> | <a href="https://docs.google.com/document/d/1kOK8Tu4E0ENtl0N5ugSVH8B7kfIJ53Uiarx52T5RIqE/" target="_blank">[알려진 오류(정오표)]</a> | <a href="https://github.com/WegraLee/deep-learning-from-scratch/raw/refs/heads/master/equations_and_figures.zip" target="_blank">[본문 그림과 수식 이미지 모음]</a>
 
