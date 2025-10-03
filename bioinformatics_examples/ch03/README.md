@@ -15,3 +15,5 @@ label: EI(Donor), IE(Acceptor), N(Neither of them)
 The matrix include patterns of splice sites
 Based on this matrix, model can score bases for each classes EI,IE and N
 
+### Reference
+IUPAC DNA
