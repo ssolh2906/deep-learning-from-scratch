@@ -1,4 +1,5 @@
 import numpy as np
+from numpy.f2py.auxfuncs import throw_error
 
 # I wrote this code down with the help of ChatGPT5.0
 
@@ -20,6 +21,7 @@ IUPAC = {
     'V': ['A', 'C', 'G'],
     'N': ['A', 'C', 'G', 'T']
 }
+
 
 def encode_base(base: str) -> np.ndarray:
     """
@@ -50,12 +52,36 @@ def encode_base(base: str) -> np.ndarray:
     # Unexpected input _> [0,0,0,0]
     return vector
 
+
 def encode_seq(seq: str) -> np.ndarray:
     """
-    Convert sequence of length L (60) to (L=60,4) array X
+    Convert sequence of length L (60) to (L=60,4) array seq_matrix
     """
     try:
-        X = np.stack([encode_base(ch) for ch in seq], axis=0).astype(np.float32)
-        return X
+        seq_matrix = np.stack([encode_base(ch) for ch in seq], axis=0).astype(np.float32)
+        return seq_matrix
     except Exception as e:
-        raise Exception(f"Failed to encode sequence: {e}")
+        raise Exception("Failed to encode sequence: {e}")
+
+
+def flatten_encoded_seq(seq_matrix: np.ndarray) -> np.ndarray:
+    try:
+        return seq_matrix.reshape(-1).astype(np.float32) # -1: Infer this dimension, in this case, number of all elements.
+    except Exception as e:
+        raise Exception("Failed to flatten sequence: {e}")
+
+
+# test
+if __name__ == '__main__':
+    seq = "ATTYCGGRTG"*10 # Length 60
+    print("Sequence:",seq[:10],"...")
+    print()
+
+    seq_matrix = encode_seq(seq)
+    print("Encoded seq shape:", seq_matrix.shape)
+    print(seq_matrix[:5])
+    print()
+
+    x = flatten_encoded_seq(seq_matrix)
+    print("Flattened seq shape:", x.shape)
+
