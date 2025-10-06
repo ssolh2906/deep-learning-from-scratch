@@ -115,5 +115,9 @@ if __name__ == '__main__':
     print("Vector shape:", vector.shape)
     print("Vector first 16 values:", vector[:16])
 
+    # TODO
+    """
+    From part of real data, get short test data
+    """
     # Test load splice
     # test_data_path = "bioinformatics_examples\ch03\test_data\splice_test.data"
