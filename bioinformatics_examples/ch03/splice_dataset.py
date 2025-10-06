@@ -13,7 +13,7 @@ LABEL_MAP = {
     'N':2
 }
 
-logging = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 def _parse_line(line) -> tuple[int,str]:
     """
@@ -65,8 +65,39 @@ def _load_raw(path):
                 continue
         if n_skipped > 0:
             logging.warning(f"Skipped {n_skipped} lines")
-    return 0
+    return (list_x, list_t)
 
+def _split_indicies(n, seed = 0):
+    """
+    Return (train_idx, val_idx, test_idx) lists.
+    """
+    split = (0.6, 0.6, 0.6)
+    a,b,c = split
+
+    rng = np.random.RandomState(seed)
+    idx = np.arange(n)
+    rng.shuffle(idx)
+
+    n_train = int(n * a)
+    n_val = int(n * b)
+
+    train_idx = idx[:n_train]
+    val_idx = idx[n_train:n_train+n_val]
+    test_idx = idx[n_train+n_val:]
+
+    return (train_idx, val_idx, test_idx)
+
+
+def load_splice(path, seed = 0):
+    xs, ts = _load_raw(path)
+    matrix_x = np.vstack(xs).astype(np.float32)
+    matrix_t = np.asarray(ts, dtype=np.int64)
+
+    train_idx, val_idx, test_idx = _split_indicies(len(matrix_x),seed)
+    def _take(indices):
+        return matrix_x[indices], matrix_t[indices]
+
+    return _take(train_idx), _take(val_idx), _take(test_idx)
 
 if __name__ == '__main__':
     import logging
@@ -83,3 +114,6 @@ if __name__ == '__main__':
     vector = seq_to_vector(seq)
     print("Vector shape:", vector.shape)
     print("Vector first 16 values:", vector[:16])
+
+    # Test load splice
+    # test_data_path = "bioinformatics_examples\ch03\test_data\splice_test.data"
