@@ -1,10 +1,9 @@
 """
 A loader for the UCI Splice-junction Gene Sequence dataset.
 """
-from logging import raiseExceptions
-
 import numpy as np
-
+import logging
+from typing import List, Tuple
 from bioinformatics_examples.ch03.utils_iupac import flatten_encoded_seq
 from utils_iupac import encode_seq
 
@@ -14,6 +13,7 @@ LABEL_MAP = {
     'N':2
 }
 
+logging = logging.getLogger(__name__)
 
 def _parse_line(line) -> tuple[int,str]:
     """
@@ -42,23 +42,36 @@ def seq_to_vector(seq):
     return vector
 
 def _load_raw(path):
-    n_total = 0
+    """
+    Read the dataset file and return list of vectors and labels.
+    vector: list of (240,)
+    labels: list of labels {EI:0, IE:1, N:2}
+    """
     n_skipped = 0
+    list_x:List[np.ndarray] = []
+    list_t:List[int] = []
     with open(path, 'r', encoding='utf-8', errors='ignore') as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
             try:
-                t , seq = _parse_line(line)
-                x = encode_seq(seq)
-                n_total += 1
-            except Exception as e:
-                raiseExceptions(e)
+                t , x = _parse_line(line)
+                vec = seq_to_vector(x)
+                list_x.append(vec)
+                list_t.append(t)
+            except Exception:
+                n_skipped += 1
+                continue
+        if n_skipped > 0:
+            logging.warning(f"Skipped {n_skipped} lines")
     return 0
 
 
 if __name__ == '__main__':
+    import logging
+    logging.basicConfig(level=logging.INFO, format='%(name)s - %(levelname)s - %(message)s')
+
     # Test _parse_line
     line_ok = "IE, sample_001, ACGTNACGTNACGTNACGTNACGTNACGTNACGTNACGTNACGTNACGTNACGTN"
     t,seq = _parse_line(line_ok)
