@@ -18,4 +18,5 @@ label: EI(Donor), IE(Acceptor), N(Neither of them)
 ### Molecular Biology (Splice-junction Gene Sequences)
 **Source**: [UCI Machine Learning Repository — Splice‑junction gene sequences](https://archive.ics.uci.edu/dataset/69/molecular+biology+splice+junction+gene+sequences)  
 **Number of instances**: 3190  
-**Number of Features**: 60 (each feature is a nucleotide A,C,G,T)
+**Number of Features**: 60 (each feature is a nucleotide A,C,G,T)  
+**DOI**: 10.24432/C5M888  
