@@ -1,7 +1,14 @@
 import numpy as np
 from numpy.f2py.auxfuncs import throw_error
+'''
+utils_iupac
+
+Encode '60- mer IUPAC characters' to 'one-hot/frac-hot(60x4)'
+Flat (60x4) to (240,)
+'''
 
 # I wrote this code down with the help of ChatGPT5.0
+
 
 BASES = ['A', 'C', 'G', 'T']
 BASES_TO_INDEX = {b:i for i, b in enumerate(BASES)}

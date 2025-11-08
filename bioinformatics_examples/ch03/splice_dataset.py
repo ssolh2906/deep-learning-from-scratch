@@ -1,5 +1,8 @@
 """
 A loader for the UCI Splice-junction Gene Sequence dataset.
+
+parse label and sequence line by line
+
 """
 import numpy as np
 import logging
@@ -67,7 +70,7 @@ def _load_raw(path):
             logging.warning(f"Skipped {n_skipped} lines")
     return (list_x, list_t)
 
-def _split_indicies(n, seed = 0):
+def _split_indices(n, seed = 0):
     """
     Return (train_idx, val_idx, test_idx) lists.
     """
@@ -93,7 +96,7 @@ def load_splice(path, seed = 0):
     matrix_x = np.vstack(xs).astype(np.float32)
     matrix_t = np.asarray(ts, dtype=np.int64)
 
-    train_idx, val_idx, test_idx = _split_indicies(len(matrix_x),seed)
+    train_idx, val_idx, test_idx = _split_indices(len(matrix_x), seed)
     def _take(indices):
         return matrix_x[indices], matrix_t[indices]
 
