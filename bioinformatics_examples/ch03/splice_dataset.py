@@ -6,11 +6,9 @@ parse label and sequence line by line
 """
 import numpy as np
 import logging
-from typing import List, Tuple
-
 from bioinformatics_examples.ch03.load_data import _load_raw_from_ucirepo
 from bioinformatics_examples.ch03.utils_iupac import flatten_encoded_seq
-from utils_iupac import encode_seq
+from bioinformatics_examples.ch03.utils_iupac import encode_seq
 
 LABEL_MAP = {
     'EI': 0,
@@ -53,7 +51,7 @@ def _split_indices(n, seed=0):
     """
     Return (train_idx, val_idx, test_idx) lists.
     """
-    split = (0.6, 0.6, 0.6)
+    split = (0.6, 0.2, 0.2)
     a, b, c = split
 
     rng = np.random.RandomState(seed)
@@ -67,7 +65,7 @@ def _split_indices(n, seed=0):
     val_idx = idx[n_train:n_train + n_val]
     test_idx = idx[n_train + n_val:]
 
-    return (train_idx, val_idx, test_idx)
+    return train_idx, val_idx, test_idx
 
 
 def load_splice(seed=0):

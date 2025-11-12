@@ -1,5 +1,4 @@
 import numpy as np
-from numpy.f2py.auxfuncs import throw_error
 '''
 utils_iupac
 
@@ -75,7 +74,7 @@ def flatten_encoded_seq(seq_matrix: np.ndarray) -> np.ndarray:
     try:
         return seq_matrix.reshape(-1).astype(np.float32) # -1: Infer this dimension, in this case, number of all elements.
     except Exception as e:
-        raise Exception("Failed to flatten sequence: {e}")
+        raise Exception(f"Failed to flatten sequence: {e}")
 
 
 # test
